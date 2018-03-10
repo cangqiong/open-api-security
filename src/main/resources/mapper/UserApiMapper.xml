@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.chason.openapi.mapper.UserApiMapper">
+  <resultMap id="BaseResultMap" type="org.chason.openapi.entity.UserApi">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="uiid" jdbcType="VARCHAR" property="uiid" />
+    <result column="api_path" jdbcType="VARCHAR" property="apiPath" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, uiid, api_path
+  </sql>
+</mapper>
