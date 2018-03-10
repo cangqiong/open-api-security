@@ -12,6 +12,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.PrintWriter;
+import java.net.URLDecoder;
 
 /**
  * 自定义拦截器，验证第三方是否有权限访问接口
@@ -40,6 +41,7 @@ public class AuthorizationInterceptor extends HandlerInterceptorAdapter {
         String requestMethod = request.getMethod();
         String requestUri = request.getRequestURI();
         String queryString = request.getQueryString();
+        queryString = URLDecoder.decode(queryString, "utf-8");
         logger.info("请求方法为：{}，请求路径为：{}，请求参数为：{}", requestMethod, requestUri, queryString);
 
         try {

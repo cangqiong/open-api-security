@@ -34,8 +34,8 @@ public class MockController {
     public ResultBean<String> addBlog() {
 
         // 获取Token
-        StringBuilder url = new StringBuilder("http://localhost:8081/hello");
-        StringBuilder queryStr = new StringBuilder();
+        StringBuilder url = new StringBuilder("http://localhost:8081/hello/sayHello");
+        StringBuilder queryStr = new StringBuilder("name=世界");
 
         ResultBean<String> tokenRes = restTemplate.getForObject(getTonkenUrl, ResultBean.class);
 
@@ -44,7 +44,7 @@ public class MockController {
         }
 
         //  添加Token
-        queryStr.append(QueryStringConstant.TOKEN).append("=").append(tokenRes.getData()).append("&")
+        queryStr.append("&").append(QueryStringConstant.TOKEN).append("=").append(tokenRes.getData()).append("&")
                 // 添加时间戳
                 .append(QueryStringConstant.TIMESTAMP).append("=").append(System.currentTimeMillis());
 

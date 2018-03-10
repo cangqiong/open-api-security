@@ -10,13 +10,18 @@ open API 安全设计
 4. 请求的有效时间
 
 ## 安全接口设计原理
-通过验证调用方或第三方的Token与唯一签名与时间戳标识用户的有效性
-，从而保证用户调用接口的安全性
+通过验证调用方/第三方的Token与唯一签名与时间戳标识用户的有效性，从而保证用户调用接口的安全性
 
 ## Demo
-https://***.com/search/users/?safe=strict&q=测试&cad=h
-上面的/serarch/users为访问路径
-safe=strict&q=测试&cad=h为请求参数
+http://localhost:8081/hello/sayHello?name=world&token=72e07590f879c8e5e291d2aaca8d68b2&timestamp=1520672558698&appkey=934d099851cab886fcd7db9ca1c442fe
+上面的/hello/sayHello为访问路径
+name=world为请求参数
+token=72e07590f879c8e5e291d2aaca8d68b2为请求Token
+timestamp=1520672558698为请求发出的时间
+appkey=934d099851cab886fcd7db9ca1c442fe为加密签名
+
+
+
 
 
 
